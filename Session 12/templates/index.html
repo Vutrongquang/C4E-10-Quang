@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zig Home</title>
+</head>
+<body>
+
+<h2>Welcome to Zig Home</h2>
+
+<hr>
+
+<a href="/{{ url_for("Introduction")}}">Giới thiệu</a>
+
+<a href="/{{ url_for("News")}}">Tin tức - Sự kiên</a>
+
+<a href="/{{ url_for("Courses")}}">Khóa học</a>
+
+
+<a href="/{{ url_for("Library")}}">Thư viện</a>
+
+<a href="/{{ url_for("about")}}">Liên hệ</a>
+
+<hr>
+
+{# Jinja 2 #}
+{% for course in Courses %}
+    <img src="{{ course.image }}" alt="">
+    <h3>{{ course.title }}</h3>
+    <p>{{ course.price }}</p>
+{% endfor %}
+
+
+</body>
+</html>
